@@ -1,0 +1,44 @@
+{
+  "login": {
+    "username": "zamani",
+    "password": "1234",
+    "token": "dsf34234234234fgsdgdfgdfgd"
+  },
+  "theme": {
+    "color": "primary"
+  },
+  "list": [
+    {
+      "id": 1,
+      "item": "bread"
+    },
+    {
+      "id": 2,
+      "item": "grapes"
+    },
+    {
+      "item": "fruits",
+      "id": 3
+    },
+    {
+      "item": "pomegranate",
+      "id": 4
+    },
+    {
+      "item": "sdfsdfsdf",
+      "id": 5
+    },
+    {
+      "item": "ali444",
+      "id": 6
+    },
+    {
+      "item": "erterte",
+      "id": 7
+    },
+    {
+      "item": "5645645645",
+      "id": 8
+    }
+  ]
+}

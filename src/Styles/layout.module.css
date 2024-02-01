@@ -1,0 +1,239 @@
+.primary{
+    direction: rtl;
+}
+
+.primary .layout{
+    display: flex;
+    flex-direction: column;
+}
+
+.primary .logo{
+    display: none;
+}
+
+.primary .topbar{
+    background: white;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+}
+
+.primary .topbar .mb_menu{
+    display: block;
+    flex: 1 1;
+    padding-right: 15px;
+    color: #333;
+}
+
+
+.primary .topbar .mb_menu a{
+    color: #333;
+}
+
+.primary .topbar .mb_logo{
+    flex: 1 1;
+}
+
+.primary .topbar .user_menu{
+    flex: 1 1;
+    justify-content: end;
+    align-items: center;
+}
+
+.primary .topbar .user_menu > a{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.primary .topbar .user_menu > a img{
+    border-radius: 50%;
+    width: 50px;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.primary .topbar .user_menu > .user_submenu{
+    position: absolute;
+    left: 5px;
+    background-color: white;
+    width: 200px;
+    top:85px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.primary .topbar .user_menu > .user_submenu a{
+    display: block;
+    padding: 10px 20px 10px 20px;
+    font-size: smaller;
+}
+.primary .topbar .user_menu > .user_submenu li:not(:last-child) a{
+    border-bottom: 1px solid #ddd;
+}
+.primary .topbar .user_menu > .user_submenu a:hover{
+    background-color: rgb(34 197 94);
+    color: #fff;
+}
+.primary .layout .side_menu{
+    grid-column: 1/3;
+    background-color: #333;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.primary .layout .active_side_menu{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    top: 60px;
+    height: 2000px;
+    z-index: 1020;
+}
+
+.primary .layout .side_menu ul{
+    list-style: none;
+    flex-direction: column;
+    font-size: medium;
+    width: 100%;
+}
+
+.primary .layout .side_menu > ul{
+    display: flex;
+    padding: 0px;
+}
+
+.primary .layout .side_menu > ul > li:not(:last-child){
+    border-bottom: 1px solid #444;
+}
+
+.primary .layout .side_menu > ul > li > a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 20px 10px;
+    line-height: 2.5rem;
+    color: #ddd;
+    text-decoration: none;
+    font-size: small;
+    position: relative;
+}
+
+.primary .layout .side_menu > ul > li > a > .dropdown{
+    width: 100%;
+    text-align: center;
+}
+
+.primary .layout .side_menu > ul > li > a > .dropdown svg{
+    margin-right: 1px;
+}
+.primary .layout .side_menu > ul > li > a:hover{
+    background-color: #555;
+}
+
+.primary .layout .side_menu > ul > li > ul{
+    padding: 0px;
+    background-color: #222;
+}
+
+.primary .layout .side_menu > ul > li > ul > li{
+    padding: 5px;
+}
+
+.primary .layout .side_menu > ul > li > ul > li:not(:last-child) > a{
+    border-bottom: 1px solid #444;
+}
+
+
+.primary .layout .side_menu > ul > li > ul > li > a{
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+    color: #ddd;
+    font-size: smaller;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.primary .layout .side_menu > ul > li > ul > li > a:hover{
+    background-color: #555;
+}
+.main{
+    background-color: #ddd;
+}
+
+.main .content{
+    width: 100%;
+    padding: 5px;
+    min-height: calc(100vh - 55px);
+}
+
+@media (min-width: 768px){
+    .primary .layout .side_menu{
+        display: flex;
+    }
+
+    .primary .layout{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-flow: row dense;
+    }
+
+    .primary .topbar .mb_menu{
+        display: none;
+    }
+
+    .main{
+        grid-column: 3/-1;
+        display: flex;
+    }
+    .main .content{
+        padding: 20px;
+        min-height: calc(100vh - 80px);
+    }
+
+    .primary .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+        grid-column: 1/3;
+        /* grid-row: 1/3; */
+        height: 5rem;
+        background-color: rgb(34 197 94);
+        z-index: 1001;
+    }
+
+    .primary .logo img{
+        width: auto;
+        height: 50px;
+    }
+
+    .primary .topbar{
+        display: flex;
+        position: sticky;
+        top: 0px;
+        grid-column: 3/-1;
+        align-items: center;
+    }
+
+    .primary .topbar .user_menu > a > .user_name{
+        display: block;
+        color: #333;
+        font-size: small;
+        margin: 0px 5px 0px 10px;
+    }
+
+    .primary .topbar .user_menu > a > .fdown{
+        display: block;
+        position: absolute;
+        
+    }
+    
+}
+

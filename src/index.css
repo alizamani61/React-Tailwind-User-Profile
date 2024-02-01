@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-slate-400
+    }
+
+    .btn {
+        @apply text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-1 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-sm text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2;
+    }
+
+    .btn-default {
+        @apply text-slate-400 bg-slate-200 hover:bg-slate-300;
+    }
+
+    .field-group {
+        @apply mt-5 relative
+    }
+
+    .field-group svg {
+        @apply absolute right-3 top-11 -mt-3.5 text-slate-400 pointer-events-none border-l pl-2;
+    }
+
+    .field-group input,
+    .field-group textarea {
+        @apply focus:ring-2 focus:ring-green-500 focus:outline-none appearance-none w-full text-sm text-slate-500 leading-6 placeholder-slate-400 rounded-sm py-2 pr-11 pl-2 ring-1 ring-slate-400 shadow-sm;
+    }
+
+    .field-group label {
+        @apply mb-2 block text-xs;
+    }
+
+    .alert {
+        @apply relative text-xs text-white w-full bg-red-400 p-2 ring-1 ring-red-500 rounded-sm mt-3 mb-2;
+    }
+
+    .alert>.arrow {
+        @apply w-2 h-2 absolute -top-1 right-4 rotate-45 bg-red-400 border-t border-l border-red-500;
+    }
+
+    .card {
+        @apply shadow-lg bg-white p-5 rounded-md text-slate-500;
+    }
+
+    .card>.card-header {
+        @apply flex items-center;
+    }
+
+    .card>.card-header>.header-icon {
+        @apply float-right ml-2;
+    }
+
+    .card>.header-line {
+        @apply mt-2 mb-2 clear-both;
+    }
+
+    .fctab>.links {
+        @apply flex flex-wrap -mb-px text-sm font-medium text-center text-slate-400;
+    }
+
+    .fctab>.links>li {
+        @apply mr-2
+    }
+
+    .fctab>.links>li a {
+        @apply inline-flex p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-slate-400 text-sm;
+    }
+
+    .fctab>.links>li a.active {
+        @apply text-green-500 border-green-600;
+    }
+
+    .calendar-table {
+        @apply text-center text-slate-500 text-xs;
+    }
+
+
+
+
+}
+
+@layer utilities {
+    .placeholder-style::placeholder {
+        float: right;
+
+    }
+}
+
+
+:root {
+    --flc-text-color: #777;
+}
+
+*,
+html,
+body {
+    font-family: "IRANSansWeb_FaNum_Medium";
+    padding: 0px;
+    margin: 0px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(1, 93, 36, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #777;
+    outline: 1px solid #666;
+    width: 5px;
+}
+
+.fcckeckbox {
+    width: 50px;
+    height: 26px;
+    background: #eee;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.fcckeckbox:after {
+    /* content: "OFF"; */
+    color: #eee;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+}
+
+.fcckeckbox:before {
+    /* content: "ON"; */
+    color: #27ae60;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+}
+
+.fcckeckbox label {
+    display: block;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    z-index: 1;
+    background: #fff;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.fcckeckbox input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.fcckeckbox input[type="checkbox"]:checked+label {
+    left: 23px;
+    border: 1px solid rgb(32, 184, 87);
+    background: rgb(34 197 94);
+    /* background: linear-gradient(to bottom, rgb(34 197 94) 0%, rgb(37, 214, 102) 40%, rgb(34 197 94) 100%); */
+
+}
+
+/* end .fcckeckbox */
+
+.top-100 {
+    top: 100%
+}
+
+.bottom-100 {
+    bottom: 100%
+}
+
+.max-h-select {
+    max-height: 300px;
+}
+
+.note {
+    position: fixed;
+    top: 2.5rem;
+    left: 0.5rem;
+    z-index: 1005;
+    display: flex;
+    width: 250px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    opacity: 0.9;
+    font-size: small;
+    --fc-duration: 0.5s;
+    --fc-animation-name: slidein;
+    animation: var(--fc-animation-name) linear var(--fc-duration);
+    -webkit-animation: var(--fc-animation-name) linear var(--fc-duration);
+    -moz-animation: var(--fc-animation-name) linear var(--fc-duration);
+    -o-animation: var(--fc-animation-name) linear var(--fc-duration);
+    -ms-animation: var(--fc-animation-name) linear var(--fc-duration);
+
+}
+
+.note-danger {
+    background-color: rgb(248 113 113 / 1);
+    border: 1px solid rgb(239 68 68 / 1);
+}
+
+.note-success {
+    background-color: rgb(74, 222, 128);
+    border: 1px solid rgb(34, 197, 94);
+
+}
+
+.note-warning {
+    background-color: rgb(251, 146, 60);
+    border: 1px solid rgb(249, 115, 22);
+
+}
+
+.calendar-table {
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.calendar-table tr th,
+.calendar-table tr td {
+    padding: 5px;
+    height: 27px;
+}
+
+.calendar-table tr td.empty {
+    background-color: rgb(226 232 240 / 1);
+}
+
+.calendar-table tr td.today {
+    background-color: rgb(74 222 128 / 1);
+    color: white;
+}
+
+.calendar-table tr td a{
+    display: block;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 400px;
+    }
+
+    75% {
+        font-size: 300%;
+        margin-left: 25%;
+        width: 300px;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100px;
+    }
+}
